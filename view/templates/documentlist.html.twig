@@ -1,0 +1,31 @@
+{% for data2 in arr2 %}
+        <div style="margin-left:400px;">
+   To upload a Document to the database, <a href="../controller/documentactions.php?userno={{data2.userno}}"><b>Click here!</b></a></div>
+{% endfor %}
+<div class="container my-3" style="margin-top:30px;">
+    <table id="user_table" class="table table-striped container">
+           <thead>
+                <tr>
+                    <th>Document ID</th>
+                    <th>Document Path/Name</th> 
+                    <th>Document Upload time </th>
+                    <th>Uploaded by userno </th>
+                    <th>Action</th>
+                    <th>Action</th>   
+                </tr>
+            </thead>
+            <tbody> 
+                {% for data in arr %}
+                <tr>
+                    <td>{{ data.docid }}</td>
+                    <td>{{ data.docname }}</td> 
+                    <td>{{ data.timestamp }}</td>
+                    <td>{{ data.userno }} </td>
+                    <td><a href="../controller/documentactions.php?updatedocid={{data.docid}}"><b>Update</b></a></td>
+                    <td><a href="../controller/documentactions.php?deletedocid={{data.docid}}"><b>Delete</b></a></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+    </table>
+</div>
